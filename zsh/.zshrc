@@ -1,5 +1,8 @@
+# Make tramp mode work
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH=$HOME/.oh-my-zsh
@@ -90,3 +93,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# History
+HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
+setopt APPEND_HISTORY          # append rather than overwrite history file.
+HISTSIZE=12000                  # lines of history to maintain memory
+SAVEHIST=12000                 # lines of history to maintain in history file.
+setopt HIST_EXPIRE_DUPS_FIRST  # allow dups, but expire old ones when I hit HISTSIZE
+setopt EXTENDED_HISTORY        # save timestamp and runtime information
+
+export PATH=$HOME/.toolbox/bin:$PATH
+
