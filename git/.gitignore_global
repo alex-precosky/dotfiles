@@ -1,0 +1,15 @@
+# emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# GNU GLOBAL
+GPATH
+GTAGS
+GSYMS
+GRTAGS
