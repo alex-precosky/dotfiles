@@ -1,3 +1,5 @@
+# human readable ls-l
+alias lh='ls -hAl'
 # Make tramp mode work
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
