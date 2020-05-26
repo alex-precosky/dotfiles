@@ -1,5 +1,9 @@
 # human readable ls-l
 alias lh='ls -hAl'
+
+# find file
+alias ff="find . -type f -name "
+
 # Make tramp mode work
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
