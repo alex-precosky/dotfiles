@@ -5,22 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# human readable ls-l
-if command -v exa &> /dev/null
-then
-    alias lh='exa -lh'
-    alias ll='exa -lh'
-else
-    alias lh='ls -lh'
-    alias ll='ls -lh'
-fi
-
-# find file
-alias ff="find . -type f -name "
-
-# open tty emacsclient for emacs in daemon mode
-alias ec="emacsclient -c -nw"
-
 # Make tramp mode work
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
@@ -109,15 +93,6 @@ source ~/.zshlocal
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # History
 HISTFILE=$HOME/.zhistory       # enable history saving on shell exit
 setopt APPEND_HISTORY          # append rather than overwrite history file.
@@ -133,3 +108,28 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH=$HOME/.toolbox/bin:$PATH
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# human readable ls-l
+if command -v exa &> /dev/null
+then
+    alias lh='exa -lh'
+    alias ll='exa -lh'
+else
+    alias lh='ls -lh'
+    alias ll='ls -lh'
+fi
+
+# find file
+alias ff="find . -type f -name "
+
+# open tty emacsclient for emacs in daemon mode
+alias ec="emacsclient -c -nw"
+
