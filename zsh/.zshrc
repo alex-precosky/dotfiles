@@ -6,7 +6,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # human readable ls-l
-alias lh='ls -hAl'
+if command -v exa &> /dev/null
+then
+    alias lh='exa -lh'
+    alias ll='exa -lh'
+else
+    alias lh='ls -lh'
+    alias ll='ls -lh'
+fi
 
 # find file
 alias ff="find . -type f -name "
