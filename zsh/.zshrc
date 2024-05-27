@@ -117,11 +117,14 @@ export PATH=$HOME/.toolbox/bin:~/.pyenv/bin/pyenv:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Find rust binaries
+export PATH=$PATH:~/.cargo/bin
+
 # human readable ls-l
-if command -v exa &> /dev/null
+if command -v eza &> /dev/null
 then
-    alias lh='exa -lh'
-    alias ll='exa -lh'
+    alias lh='eza -lh'
+    alias ll='eza -lh'
 else
     alias lh='ls -lh'
     alias ll='ls -lh'
@@ -132,6 +135,3 @@ alias ff="find . -type f -name "
 
 # open tty emacsclient for emacs in daemon mode
 alias ec="emacsclient -c -nw"
-
-# Find rust binaries
-export PATH=$PATH:~/.cargo/bin
