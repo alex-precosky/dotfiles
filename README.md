@@ -6,7 +6,7 @@ GNU stow to the resuce!
 
 # usage
 
-Clone the repository in your homer directory. Then you can...
+Clone the repository in your home directory. Then you can...
 
 ```
 cd dotfiles
