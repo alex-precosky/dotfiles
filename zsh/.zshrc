@@ -132,3 +132,6 @@ alias ff="find . -type f -name "
 
 # open tty emacsclient for emacs in daemon mode
 alias ec="emacsclient -c -nw"
+
+# Find rust binaries
+export PATH=$PATH:~/.cargo/bin
