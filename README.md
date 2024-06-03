@@ -6,6 +6,18 @@ GNU stow to the resuce!
 
 Plus ansible to help set some things up.
 
+# Setup
+
+## Stow
+
+Build stow from source. Obtain from: https://ftp.gnu.org/gnu/stow/
+
+## Ansible
+
+Install ansible.
+
+Mac: `brew install ansible`
+
 # usage
 
 Clone the repository in your home directory. Then you can...
