@@ -1,0 +1,20 @@
+---
+- name: Set up envionment how I like it
+  hosts: localhost
+
+  tasks:
+  - name: Install "eza" Rust package
+    community.general.cargo:
+      name: eza
+
+  - name: Install "ripgrep" Rust package
+    community.general.cargo:
+      name: ripgrep
+
+  - name: Install "bat" Rust package
+    community.general.cargo:
+      name: bat
+
+  - name: Install "fd-find" Rust package
+    community.general.cargo:
+      name: fd-find
