@@ -12,9 +12,18 @@ Plus ansible to help set some things up.
 
 Build stow from source. Obtain from: https://ftp.gnu.org/gnu/stow/
 
+
 ## Ansible
 
 Install ansible.
+
+AL2:
+
+```
+pip3 install ansible
+ansible-galaxy collection install community.general  --server https://old-galaxy.ansible.com
+```
+
 
 Mac: `brew install ansible`
 

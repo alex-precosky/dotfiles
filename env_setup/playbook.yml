@@ -3,6 +3,17 @@
   hosts: localhost
 
   tasks:
+
+  - name: Download Rust Installer
+    get_url:
+      url: https://sh.rustup.rs
+      dest: /tmp/sh.rustup.rs
+      mode: '0755'
+      force: 'yes'
+
+  - name: Run Rust Installer
+    shell: /tmp/sh.rustup.rs -y
+
   - name: Install "eza" Rust package
     community.general.cargo:
       name: eza
