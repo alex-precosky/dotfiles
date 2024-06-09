@@ -29,3 +29,14 @@
   - name: Install "fd-find" Rust package
     community.general.cargo:
       name: fd-find
+
+  - name: fetch fzf from github
+    git:
+      repo: 'https://github.com/junegunn/fzf.git'
+      dest: '{{ ansible_env.HOME }}/fzf'
+      version: HEAD # latest
+
+  - name: Run fzf install script
+    shell:
+      chdir: '{{ ansible_env.HOME }}/fzf'
+      cmd: '{{ ansible_env.HOME }}/fzf/install --no-key-bindings --no-completion --no-update-rc'
