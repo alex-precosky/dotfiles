@@ -140,3 +140,6 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/.fzf.zsh
 source <(fzf --zsh)
+
+# Use fzf for tmux attach
+alias att='tmux att -t $(tmux ls | fzf | cut -d':' -f1)'
