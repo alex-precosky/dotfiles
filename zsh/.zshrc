@@ -146,6 +146,9 @@ source <(fzf --zsh)
 # Use fzf for tmux attach
 alias att='tmux att -t $(tmux ls | fzf | cut -d':' -f1)'
 
+# Set up a command to browse files with bat
+alias pf="fzf --preview='bat --style=numbers --color=always {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
