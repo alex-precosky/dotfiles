@@ -9,6 +9,9 @@ tramp
 .\#*
 *~undo-tree~
 
+# clangd
+/.cache
+
 # GNU GLOBAL
 GPATH
 GTAGS
