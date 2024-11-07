@@ -43,9 +43,11 @@ stow zsh
 
 TODO: Automate the installation of `stow` and the running of it.
 
-Run environment setup automation with:
+First, ensure your user is in /etc/sudoers. Then, run environment setup automation with:
 
 ```
 cd env_setup
-ansible-playbook playbook.yml
+ansible-playbook playbook.yml --ask-become
 ```
+
+There are also OS-specific playbooks to run too.
