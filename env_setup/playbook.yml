@@ -44,3 +44,13 @@
     shell:
       chdir: '{{ ansible_env.HOME }}/fzf'
       cmd: '{{ ansible_env.HOME }}/fzf/install --no-key-bindings --no-completion --no-update-rc'
+
+  - name: Download mise-en-place installer
+    get_url:
+      url: https://mise.run
+      dest: /tmp/mise.run
+      mode: '0755'
+      force: 'yes'
+
+  - name: Run mise-en-place installer
+    shell: /tmp/mise.run
