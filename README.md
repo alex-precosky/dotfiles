@@ -8,11 +8,6 @@ Plus ansible to help set some things up.
 
 # Setup
 
-## Stow
-
-Build stow from source. Obtain from: https://ftp.gnu.org/gnu/stow/
-
-
 ## Ansible
 
 Install ansible.

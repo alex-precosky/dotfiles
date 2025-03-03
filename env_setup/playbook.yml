@@ -54,3 +54,31 @@
 
   - name: Run mise-en-place installer
     shell: /tmp/mise.run
+
+  - name: Download GNU Stow
+    get_url:
+      url: https://ftp.gnu.org/gnu/stow/stow-2.4.1.tar.gz
+      dest: /tmp/stow-2.4.1.tar.gz
+      mode: '0755'
+      force: 'yes'
+
+  - name: Extract GNU Stow
+    unarchive:
+      src: /tmp/stow-2.4.1.tar.gz
+      dest: /tmp
+
+  - name: Autotools configure GNU Stow
+    shell:
+      cmd: ./configure
+      chdir: /tmp/stow-2.4.1
+
+  - name: Build GNU Stow
+    shell:
+      cmd: make
+      chdir: /tmp/stow-2.4.1
+
+  - name: Install GNU Stow
+    shell:
+      cmd: make install
+      chdir: /tmp/stow-2.4.1
+    become: True
