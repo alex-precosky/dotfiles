@@ -23,8 +23,7 @@
       - bat
       - fd-find
       - git-delta
-    community.general.cargo:
-      name: git-delta
+      - zellij
 
   - name: fetch fzf from github
     git:
