@@ -14,23 +14,15 @@
   - name: Run Rust Installer
     shell: /tmp/sh.rustup.rs -y
 
-  - name: Install "eza" Rust package
+  - name: "Install {{ item }} Rust package"
     community.general.cargo:
-      name: eza
-
-  - name: Install "ripgrep" Rust package
-    community.general.cargo:
-      name: ripgrep
-
-  - name: Install "bat" Rust package
-    community.general.cargo:
-      name: bat
-
-  - name: Install "fd-find" Rust package
-    community.general.cargo:
-      name: fd-find
-
-  - name: Install "git-delta" Rust package
+      name: "{{ item }}"
+    with_items:
+      - eza
+      - ripgrep
+      - bat
+      - fd-find
+      - git-delta
     community.general.cargo:
       name: git-delta
 
