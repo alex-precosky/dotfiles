@@ -1,0 +1,11 @@
+---
+- name: Ubuntu specific setup
+  hosts: localhost
+
+  tasks:
+
+  - name: Install a list of packages
+    become: true
+    ansible.builtin.apt:
+      pkg:
+
