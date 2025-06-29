@@ -8,4 +8,16 @@
     become: true
     ansible.builtin.apt:
       pkg:
-
+        - build-essential
+        - libgnutls28-dev
+        - pkg-config
+        - libjansson4
+        - libjansson-dev
+        - libncurses-dev
+        - libjpeg-dev
+        - libxpm-dev
+        - libpng-dev
+        - libgif-dev
+        - libtiff-dev
+        - texinfo
+        - libgccjit-13-dev
