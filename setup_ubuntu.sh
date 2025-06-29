@@ -8,5 +8,5 @@ sudo apt upgrade -y
 sudo apt install -y ansible
 
 ansible-galaxy collection install --force community.general
-ansible-playbook env_setup/playbook_ubuntu.yml
-ansible-playbook env_setup/playbook.yml
+ansible-playbook env_setup/playbook_ubuntu.yml --ask-become
+ansible-playbook env_setup/playbook.yml --ask-become
