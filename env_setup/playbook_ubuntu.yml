@@ -20,4 +20,5 @@
         - libgif-dev
         - libtiff-dev
         - texinfo
+        - libgccjit-12-dev
         - libgccjit-13-dev
