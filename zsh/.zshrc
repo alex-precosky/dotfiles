@@ -136,8 +136,13 @@ alias ec="emacsclient -c -nw"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-source ~/.fzf.zsh
-source <(fzf --zsh)
+if [[ -f ~/.fzf.zsh ]]; then
+    source ~/.fzf.zsh
+fi
+
+if command -v fzf; then
+    source <(fzf --zsh)
+fi
 
 ############ fzf ################################################
 
