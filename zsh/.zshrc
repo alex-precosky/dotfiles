@@ -17,6 +17,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Windows terminal needs COLORTERM explicitly set
+if [[ -n "$WT_SESSION" ]]; then
+  export COLORTERM="truecolor"
+fi
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
