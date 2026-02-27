@@ -17,6 +17,8 @@
   - name: "Install Rust package"
     community.general.cargo:
       name: "{{ item }}"
+    environment:
+      PATH: "{{ ansible_env.HOME }}/.cargo/bin:{{ ansible_env.PATH }}"
     with_items:
       - eza
       - ripgrep
