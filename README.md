@@ -1,7 +1,7 @@
 # dotfiles
 My unix dotfiles managed by git stow plus environment setup automation
 
-Since I have a lot of command lines running everywhere and new ones all the time, I need an easy way to sync my config files!  
+Since I have a lot of command lines running everywhere and new ones all the time, I need an easy way to sync my config files!
 GNU stow to the resuce!
 
 Plus ansible to help set some things up.
@@ -22,7 +22,7 @@ ansible-galaxy collection install community.general  --server https://old-galaxy
 
 Mac: `brew install ansible`
 
-# usage
+# Usage
 
 Clone the repository in your home directory. Then you can...
 
