@@ -148,7 +148,7 @@ fi
 if command -v fzf >/dev/null 2>&1; then
     source <(fzf --zsh)
 fi
-return
+
 ############ fzf ################################################
 
 # Use fzf for tmux attach
