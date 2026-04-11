@@ -145,8 +145,15 @@ if [[ -f ~/.fzf.zsh ]]; then
     source ~/.fzf.zsh
 fi
 
+# Set up fzf key bindings for zsh
+# Ctrl-R: fzf through command history
+# Ctrl-T: fzf through files and paste the selection to the prompt
+# Alt-C: fzf for a directory and cd to it
 if command -v fzf >/dev/null 2>&1; then
     source <(fzf --zsh)
+    export FZF_CTRL_R_OPTS="--tmux"
+    export FZF_CTRL_T_OPTS="--tmux"
+    export FZF_ALT_C_OPTS="--tmux"
 fi
 
 ############ fzf ################################################
