@@ -22,3 +22,4 @@
         - texinfo
         - libgccjit-12-dev
         - libgccjit-13-dev
+        - libtree-sitter0
