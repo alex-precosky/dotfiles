@@ -4,7 +4,6 @@
   tasks:
 
   - name: Install SSM plugin
-    yum:
-      name: https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm
-      state: present
-    become: true
+    shell: sudo yum install -y https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm
+    args:
+      creates: /usr/local/sessionmanagerplugin/bin/session-manager-plugin
