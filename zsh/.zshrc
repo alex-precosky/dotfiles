@@ -128,7 +128,7 @@ if command -v eza &> /dev/null
 then
     alias lh='eza -lh'
     alias ll='eza -lh'
-    alias ls='eza --icons'
+    alias ls='eza --icons=auto'
 else
     alias lh='ls -lh'
     alias ll='ls -lh'
