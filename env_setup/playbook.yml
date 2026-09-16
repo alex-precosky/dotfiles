@@ -87,3 +87,46 @@
       cmd: make install
       chdir: /tmp/stow-2.4.1
     become: True
+
+  - name: Check if tmux is already installed
+    command: which tmux
+    register: tmux_check
+    changed_when: false
+    failed_when: false
+
+  - name: Download tmux source
+    get_url:
+      url: https://github.com/tmux/tmux/releases/download/3.7c/tmux-3.7c.tar.gz
+      dest: /tmp/tmux-3.7c.tar.gz
+      mode: '0644'
+      force: 'yes'
+    when: tmux_check.rc != 0
+
+  - name: Extract tmux source
+    unarchive:
+      src: /tmp/tmux-3.7c.tar.gz
+      dest: /tmp
+    when: tmux_check.rc != 0
+
+  # On macOS configure refuses to guess about utf8proc or jemalloc and insists on
+  # being told explicitly.
+  - name: Autotools configure tmux
+    shell:
+      cmd: >-
+        ./configure
+        {{ '--enable-utf8proc --enable-jemalloc' if ansible_facts['os_family'] == 'Darwin' else '' }}
+      chdir: /tmp/tmux-3.7c
+    when: tmux_check.rc != 0
+
+  - name: Build tmux
+    shell:
+      cmd: make -j{{ ansible_facts['processor_vcpus'] }}
+      chdir: /tmp/tmux-3.7c
+    when: tmux_check.rc != 0
+
+  - name: Install tmux
+    shell:
+      cmd: make install
+      chdir: /tmp/tmux-3.7c
+    become: True
+    when: tmux_check.rc != 0
