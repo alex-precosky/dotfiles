@@ -20,7 +20,12 @@ ansible-galaxy collection install community.general  --server https://old-galaxy
 ```
 
 
-Mac: `brew install ansible`
+Mac:
+
+```
+brew install ansible
+ansible-galaxy collection install geerlingguy.mac
+```
 
 # Usage
 
@@ -29,6 +34,23 @@ Clone the repository in your home directory. Then you can...
 ```
 cd dotfiles
 ```
+First, ensure your user is in /etc/sudoers.
+
+On a mac, run the mac playbook first.
+
+```
+cd env_setup
+ansible-playbook playbook_mac.yml --ask-become
+```
+
+Then run environment setup automation with:
+
+```
+cd env_setup
+ansible-playbook playbook.yml --ask-become
+```
+
+There are also other OS-specific playbooks to run too.
 
 And then, for example, to install the zsh settings...
 
@@ -37,12 +59,3 @@ stow zsh
 ```
 
 TODO: Automate the installation of `stow` and the running of it.
-
-First, ensure your user is in /etc/sudoers. Then, run environment setup automation with:
-
-```
-cd env_setup
-ansible-playbook playbook.yml --ask-become
-```
-
-There are also OS-specific playbooks to run too.

@@ -1,0 +1,19 @@
+---
+# Run this before playbook.yml on a fresh mac.
+- name: Mac specific setup
+  hosts: localhost
+
+  vars:
+    # Don't let the role run `brew bundle` against a ~/Brewfile.
+    homebrew_use_brewfile: false
+    homebrew_installed_packages:
+      - gnu-tar        # provides gtar, required by ansible's unarchive module
+      - pkg-config
+      - libevent       # tmux build dependency
+      - ncurses        # tmux build dependency
+      - utf8proc       # tmux --enable-utf8proc; macOS's own Unicode support is poor
+      - jemalloc       # tmux --enable-jemalloc; macOS calloc(3) doesn't always zero
+      - bison
+
+  roles:
+    - geerlingguy.mac.homebrew
